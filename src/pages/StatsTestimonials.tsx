@@ -64,7 +64,7 @@ export default function StatsTestimonials() {
           <h2 className="text-3xl font-heading font-bold text-foreground text-center mb-12">
             What Families Are Saying
           </h2>
-          
+
           <div className="relative">
             <div className="bg-card shadow-medium rounded-2xl p-8 md:p-12 text-center min-h-[280px] flex flex-col justify-center">
               <div className="flex items-center justify-center mb-6">
@@ -72,11 +72,11 @@ export default function StatsTestimonials() {
                   <Star key={i} className="w-6 h-6 text-secondary fill-current" />
                 ))}
               </div>
-              
+
               <blockquote className="text-xl md:text-2xl text-foreground font-medium mb-6 leading-relaxed">
                 "{testimonials[currentTestimonial].quote}"
               </blockquote>
-              
+
               <div className="flex items-center justify-center gap-4">
                 <div className="w-12 h-12 gradient-hero rounded-full flex items-center justify-center text-white font-heading font-bold">
                   {testimonials[currentTestimonial].name.charAt(0)}
@@ -113,8 +113,8 @@ export default function StatsTestimonials() {
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-smooth ${
-                    index === currentTestimonial 
-                      ? 'bg-primary' 
+                    index === currentTestimonial
+                      ? 'bg-primary'
                       : 'bg-muted hover:bg-primary/50'
                   }`}
                 />
@@ -130,7 +130,7 @@ export default function StatsTestimonials() {
           <h2 className="text-3xl font-heading font-bold text-foreground text-center mb-12">
             More Happy Voices
           </h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
               <div key={testimonial.id} className="bg-card shadow-soft rounded-xl p-6 hover:shadow-medium transition-smooth">
@@ -139,11 +139,11 @@ export default function StatsTestimonials() {
                     <Star key={i} className="w-4 h-4 text-secondary fill-current" />
                   ))}
                 </div>
-                
+
                 <blockquote className="text-foreground mb-4 leading-relaxed">
                   "{testimonial.quote}"
                 </blockquote>
-                
+
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 gradient-hero rounded-full flex items-center justify-center text-white font-heading font-bold text-sm">
                     {testimonial.name.charAt(0)}
@@ -173,13 +173,13 @@ export default function StatsTestimonials() {
             Don't just take our word for it - experience the joy of peer-led learning yourself. Join our next coding camp or workshop.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
+            <a
               href="/courses"
               className="inline-flex items-center justify-center h-12 px-6 py-3 text-base rounded-full font-medium gradient-hero text-white hover:shadow-medium transition-bounce"
             >
               Explore Our Courses
             </a>
-            <a 
+            <a
               href="/contact"
               className="inline-flex items-center justify-center h-12 px-6 py-3 text-base rounded-full font-medium border-2 border-primary text-primary bg-background hover:bg-primary hover:text-primary-foreground transition-smooth"
             >

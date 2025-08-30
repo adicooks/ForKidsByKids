@@ -3,6 +3,7 @@ import { Mail, MapPin, Clock, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Contact() {
+  const [showNotification, setShowNotification] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -90,7 +91,34 @@ export default function Contact() {
           <h2 className="text-2xl font-heading font-bold text-foreground mb-6">
             Send us a message
           </h2>
-          <form action="https://formspree.io/f/mdklezee" method="POST" className="space-y-6">
+          <form
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const form = e.target as HTMLFormElement;
+              const data = new FormData(form);
+              const res = await fetch("https://formspree.io/f/mdklezee", {
+                method: "POST",
+                body: data,
+                headers: {
+                  Accept: "application/json"
+                }
+              });
+              if (res.ok) {
+                setShowNotification(true);
+                setTimeout(() => setShowNotification(false), 3000);
+                form.reset();
+              } else {
+                alert("Submission failed. Please try again.");
+              }
+            }}
+            className="space-y-6"
+          >
+      {/* Success Notification */}
+      {showNotification && (
+        <div className="fixed top-8 right-8 z-50 bg-green-600 text-white px-6 py-3 rounded-xl shadow-lg transition-all">
+          <span className="font-bold">Submitted!</span> Your message was sent.
+        </div>
+      )}
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
