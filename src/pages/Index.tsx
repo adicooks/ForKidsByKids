@@ -74,8 +74,11 @@ const Index = () => {
                 Our Mission
               </h2>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                We create welcoming, peer-led tech learning so every kid can build something real—today.
-                No boring lectures, no intimidating jargon. Just students teaching students in the way that actually works.
+                Our camps are built <i>for kids, by kids</i>—a space where learning feels natural, fun, and real.
+                We teach through games, projects, and collaboration, not boring lectures or intimidating jargon.
+                Each student gets to build something meaningful to them while learning side by side with peers
+                who make the process welcoming and engaging. The camps embody the spirit of students teaching
+                students in a way that actually works. 
               </p>
             </div>
             <div className="grid gap-6">
