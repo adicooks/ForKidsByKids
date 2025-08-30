@@ -90,7 +90,7 @@ export default function Contact() {
           <h2 className="text-2xl font-heading font-bold text-foreground mb-6">
             Send us a message
           </h2>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form action="https://formspree.io/f/mdklezee" method="POST" className="space-y-6">
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -101,8 +101,6 @@ export default function Contact() {
                   id="name"
                   name="name"
                   required
-                  value={formData.name}
-                  onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-border rounded-xl bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
                   placeholder="Your full name"
                 />
@@ -116,8 +114,6 @@ export default function Contact() {
                   id="email"
                   name="email"
                   required
-                  value={formData.email}
-                  onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-border rounded-xl bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
                   placeholder="your@email.com"
                 />
@@ -132,8 +128,6 @@ export default function Contact() {
                   type="text"
                   id="studentAge"
                   name="studentAge"
-                  value={formData.studentAge}
-                  onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-border rounded-xl bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
                   placeholder="e.g., 12 years old"
                 />
@@ -145,8 +139,6 @@ export default function Contact() {
                 <select
                   id="interest"
                   name="interest"
-                  value={formData.interest}
-                  onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-border rounded-xl bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth"
                 >
                   <option value="">Select a program</option>
@@ -162,26 +154,22 @@ export default function Contact() {
               <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                 Message *
               </label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows={4}
-                value={formData.message}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-border rounded-xl bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth resize-none"
-                placeholder="How can we help? Ask us anything!"
-              />
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={4}
+                  className="w-full px-4 py-3 border border-border rounded-xl bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-smooth resize-none"
+                  placeholder="How can we help? Ask us anything!"
+                />
             </div>
             <div className="flex items-start gap-3">
-              <input
-                type="checkbox"
-                id="consent"
-                name="consent"
-                checked={formData.consent}
-                onChange={handleInputChange}
-                className="mt-1 w-4 h-4 text-primary border-border rounded focus:ring-primary"
-              />
+                <input
+                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  className="mt-1 w-4 h-4 text-primary border-border rounded focus:ring-primary"
+                />
               <label htmlFor="consent" className="text-sm text-muted-foreground">
                 I consent to For Kids, By Kids contacting me by email to respond to my inquiry. We'll only use your information to reply to your message. *
               </label>
